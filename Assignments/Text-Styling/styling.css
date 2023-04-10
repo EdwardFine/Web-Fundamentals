@@ -1,0 +1,22 @@
+h3 {
+    text-decoration: underline;
+    background-color: skyblue;
+    color:darkslateblue;
+    text-align: right;
+}
+h2{
+    text-align: center;
+    background-color: rebeccapurple;
+    color: white;
+    font-style: italic;
+    font-family:Georgia;
+}
+h1{
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-family:cursive;
+}
+h1 span{
+    color: aqua;
+}
