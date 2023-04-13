@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dojonary</title>
+</head>
+
+<body>
+    <div class="container flex just-center margin-auto">
+        <div class="navbar flex align-center just-between">
+            <h1 id="title" class="">Dojonary</h1>
+            <input type="text" placeholder="Search..." id="search" class="">
+            <button onclick="logIn(this)" id="log-in">Log In</button>
+        </div>
+    </div>
+    <div class="container flex just-center margin-auto">
+        <div class="container-50 flex align-center flex-col flex-2">
+            <div class="dictionary flex">
+                <div class="entry flex-1 align-center flex flex-col">
+                    <h1 class="dict-entry">ninja</h1>
+                    <h2 class="dict-cat">noun</h2>
+                    <h2>Plural: <span class="dict-plural">ninjas</span> </h2>
+                    <button class="likes" onclick="alert('Ninja was liked.')">13 Likes</button>
+                </div>
+                <div class="definition flex-2 flex align-center just-center">
+                    <p>A practitioner skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></p>
+                </div>
+            </div>
+            <div class="dictionary flex">
+                <div class="entry flex-1 align-center flex flex-col">
+                    <h1 class="dict-entry">ninja</h1>
+                    <h2 class="dict-cat">noun</h2>
+                    <h2>Plural: <span class="dict-plural">ninjas</span> </h2>
+                    <button class="likes" onclick="alert('Ninja was liked.')">37 Likes</button>
+                </div>
+                <div class="definition flex-2 flex align-center just-center">
+                    <p>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-50 flex-col flex align-center flex-1">
+            <div class="add flex align-center flex-col">
+                <h1 class="side-add">Dojonary is defined by <span class="bold">YOU</span></h1>
+                <button class="add-button" onclick="hide(this)">Add Definition</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>

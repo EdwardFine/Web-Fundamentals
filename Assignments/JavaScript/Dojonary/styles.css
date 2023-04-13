@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: Cochin cursive;
+}
+
+.flex{
+    display: flex;
+}
+.margin-auto{
+    margin: 0 auto;
+}
+.flex-col{
+    flex-direction: column;
+}
+.flex-2{
+    flex:2;
+}
+.flex-1{
+    flex:1;
+}
+.container{
+    width: 100%;
+}
+.container-50{
+    width: 50%;
+}
+.navbar{
+    width: 85%;
+    background-color: lightgray;
+}
+.align-center{
+    align-items: center;
+}
+.just-center{
+    justify-content: center;
+}
+#title{
+    font-weight: bolder;
+    font-size: 3em;
+    margin: .25em 0 .25em 1em;
+}
+#search{
+    height: 2em;
+    width: 40em;
+    border: solid black;
+    border-width: 2px;
+    font-size: 1em;
+}
+.flex-1{
+    flex:1;
+}
+#log-in{
+    width: 10%;
+    height: 2.5em;
+    margin-right: 2em;
+    background-color: rgb(43, 120, 228);
+    color: white;
+    font-size: 1.25em;
+    box-shadow: 5px 5px black;
+    border: solid black;
+    border-width: 2px;
+}
+.just-between{
+    justify-content: space-between;
+}
+.dictionary{
+    width: 75%;
+    border: solid lightgray;
+    border-width: 2px;
+    margin: 2em 0 0 2em;
+    padding: 2em;
+}
+.add{
+    width: 80%;
+    border: solid lightgray;
+    border-width: 2px;
+    margin: 2em 12em 0 0;
+    padding: 1em;
+    height: 240px;
+}
+.dict-entry{
+    font-size: 2.5em;
+}
+.definition{
+    font-size: 2em;
+}
+.dict-cat{
+    font-style: italic;
+    font-weight: lighter;
+    color: gray;
+    
+}
+.dict-plural{
+    color: gray;
+    font-style: italic;
+}
+.bold{
+    font-weight: bold;
+    color: black;
+}
+.side-add{
+    font-weight: light;
+    color: rgb(65, 65, 65);
+}
+.likes{
+    width: 5em;
+    border: solid black;
+    background-color: yellow;
+    border-width: 1px;
+    box-shadow: 3px 3px black;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: .25em;
+}
+.add-button{
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding: .5em;
+    background-color: rgb(147, 196, 125);
+    border: solid black;
+    border-width: 2px;
+    box-shadow: 3px 3px black;
+}
