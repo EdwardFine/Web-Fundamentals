@@ -180,7 +180,7 @@ img[src="gear.png"]{
     width: 50px;
     margin-bottom: 10px;
 }
-#sidebar-content{
+.sidebar-content{
     padding: 25px 0 25px 25px;
     justify-content: flex-start;
     flex-wrap: wrap;
