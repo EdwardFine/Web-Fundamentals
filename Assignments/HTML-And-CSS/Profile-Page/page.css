@@ -8,7 +8,8 @@
     width:45%;
     margin-left: 150px;
     margin-top: 50px;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     padding-top: 2em;
 }
@@ -29,7 +30,8 @@
     margin-bottom: 15px;
 }
 .content{
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 75px 10px 25px 50px;
     flex:1;
     border: solid lightgray;
