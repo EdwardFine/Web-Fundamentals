@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Profile Page</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#" class="nav-options" id="nav-profile">Profile</a>
+        <a href="#" class="nav-options">Home</a>
+        <a href="#" class="nav-options" id="active">My Profile</a>
+        <a href="#" class="nav-options">Find Connections</a>
+        <button class="nav-sign-out">Sign Out</button>
+    </div>
+    <div class="container">
+        <div class="center">
+            <div class="profile">
+                <div class="header">
+                    <img src="user-circle.png" id="profile-pic"  alt="Profile Picture">
+                </div>
+                <div class="content">
+                    <h1>
+                        Jane Doe
+                    </h1>
+                    <div class="row">
+                        <img src="map-marker.png" alt="Map icon">
+                        <h2 class="location">Seattle</h2>
+                    </div>
+                    <p class="user-details">Developer | Engineer | Problem Solver</p>
+                    <p class="user-details">Master of shadows and the Internet!</p>
+                    <div class="row">
+                        <a href="#" class="settings">
+                            <img src="gear.png" alt="Gear symbol" onclick="input =prompt('Enter Name:'); changeName(input)">
+                        </a>
+                        <a href="#" class="settings" onclick="input =prompt('Enter Name:'); changeName(input)">edit profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education">
+                <div class="education-header">
+                    <h2 class="education-title">Education</h2>
+                </div>
+                <div class="content" id="education-content">
+                    <h2 class="education-cont" id="education-name">Coding Dojo - Full Stack Bootcamp</h2>
+                    <h2 class="education-cont" id="education-time">Dec 2019 - Mar 2020</h2>
+                    <h2 class="education-cont">Triple black belt in Python, MERN, and C#...</h2>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="center" id="sidebar">
+            <div class="requests">
+                <div class="sidebar-header">
+                    <div class="notifications">
+                        <p class="notif-font">4</p>
+                    </div>
+                    <h2 class="sidebar-title">Connection Requests</h2>
+                </div>
+                <div class="content sidebar-content">
+                    <div class="row just-between">
+                        <div class="row">
+                            <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                            <h2 class="connections-names">Todd E</h2>
+                        </div>
+                        <div>
+                            <img src="accept-circle.png" onclick="process(this,1)" alt="Accept">
+                            <img src="close-circle.png" onclick="process(this,2)" alt="Decline">
+                        </div>
+                    </div>
+                    <div class="row just-between">
+                        <div class="row">
+                            <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                            <h2 class="connections-names">Phil K</h2>
+                        </div>
+                        <div>
+                            <img src="accept-circle.png" onclick="process(this,1)" alt="Accept">
+                            <img src="close-circle.png" onclick="process(this,2)" alt="Decline">
+                        </div>
+                    </div>
+                    <div class="row just-between">
+                        <div class="row">
+                            <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                            <h2 class="connections-names">Johnny C</h2>
+                        </div>
+                        <div>
+                            <img src="accept-circle.png" onclick="process(this,1)" alt="Accept">
+                            <img src="close-circle.png" onclick="process(this,2)" alt="Decline">
+                        </div>
+                    </div>
+                    <div class="row just-between">
+                        <div class="row">
+                            <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                            <h2 class="connections-names">Michael J</h2>
+                        </div>
+                        <div>
+                            <img src="accept-circle.png" onclick="process(this,1)" alt="Accept">
+                            <img src="close-circle.png" onclick="process(this,2)" alt="Decline">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connections">
+                <div class="sidebar-header" id="my-connections">
+                    <div class="notifications" id="larger">
+                        <p class="notif-font">418</p>
+                    </div>
+                    <h2 class="sidebar-title">Your Connections</h2>
+                </div>
+                <div class="content sidebar-content">
+                    <div class="row">
+                        <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                        <h2 class="connections-names">Adrien D</h2>
+                    </div>
+                    <div class="row">
+                        <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                        <h2 class="connections-names">Anne J</h2>
+                    </div>
+                    <div class="row">
+                        <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                        <h2 class="connections-names">Alayne T</h2>
+                    </div>
+                    <div class="row">
+                        <img src="user-circle.png" class="connections-pic" alt="Profile Picture">
+                        <h2 class="connections-names">Arry Y</h2>
+                    </div>
+                </div>
+                <div class="content sidebar-content">
+                    <a href="#" class="view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

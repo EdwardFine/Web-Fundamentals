@@ -1,0 +1,206 @@
+*{
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+.center{
+    width:45%;
+    margin-left: 150px;
+    margin-top: 50px;
+
+}
+.container{
+    display: flex;
+}
+.row{
+    align-items: center;
+    display: flex;
+}
+/* User Card */
+.header{
+    background-color:rgb(23, 162, 184) ;
+    width: 100%;
+    height: 100px;
+}
+.profile{
+    margin-bottom: 15px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 75px 10px 25px 50px;
+    flex:1;
+    border: solid lightgray;
+    border-width: 0px 2px 2px 2px;
+}
+.location{
+    display:inline-block;
+    padding: 10px;
+    font-family: sans-serif;
+}
+img[src="map-marker.png"]{
+    height: 25px;
+    margin-right: 10px;
+}
+#profile-pic{
+    height: 100px;
+    position: relative;
+    top: 60px;
+    left: 30px;
+}
+img[src="gear.png"]{
+    height: 25px;
+    margin-right: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x:hidden;
+}
+.just-between{
+    justify-content: space-between;
+}
+.user-details{
+    font-size: 1.25em;
+}
+.settings{
+    margin-top: 20px;
+}
+
+/* Top navbar */
+.navbar{
+    width: 100%;
+    background-color: black;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding:10px 10px 10px 150px;
+}
+.nav-options{
+    color: lightgray;
+    font-size: 1em;
+    margin: 15px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.nav-sign-out{
+    background-color:rgb(23, 162, 184);
+    width: 100px;
+    padding: 10px 0 10px 0;
+    color: white;
+    font-size: 1.25em;
+    font-family: sans-serif;
+    margin-left:auto;
+    margin-right: 400px;
+}
+#active{
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+#nav-profile{
+    margin-left: -5px;
+    margin-right: 10px;
+    font-size: 2em;
+}
+/* Education */
+.education{
+    margin-top: 50px;
+}
+.education-header{
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    height: 75px;
+    align-items: center;
+    display: flex;
+}
+.education-title{
+    color: white;
+    margin: 10px 10px 10px 50px;
+    font-family: sans-serif;
+}
+.education-cont{
+    font-family: sans-serif;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+#education-content{
+    padding: 20px 0px 20px 25px;
+}
+#education-name{
+    font-weight: bold;
+}
+#education-time{
+    font-weight: lighter;
+    font-style: italic;
+    color: rgb(61, 58, 58);
+}
+/* Sidebar (right) */
+#sidebar{
+    width: 25%;
+}
+.sidebar-header{
+    background-color: rgb(51, 51, 51);
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 390px;
+}
+.sidebar-title{
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+/* Requests */
+.notifications{
+    border-radius: 50%;
+    background-color: rgb(204, 204, 204);
+    width: 2em;
+    height: 2em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+#larger{
+    width: 4em;
+}
+.notif-font{
+    color:rgb(51, 51, 51) ;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+.connections-pic{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+.sidebar-content{
+    padding: 25px 0 25px 25px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-width: 362px;
+}
+.connections-names{
+    margin: 0 4em 0 1em;
+}
+img[src="accept-circle.png"], img[src="close-circle.png"]{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+/* My Connections */
+#my-connections{
+    margin-top: 25px;
+}
+.view-more{
+    font-family: sans-serif;
+    font-size: 1.5em;
+
+}
