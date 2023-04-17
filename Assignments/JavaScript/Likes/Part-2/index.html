@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Like Part 2</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col wid-75 align-cent">
+            <h1 class="header">Network</h1>
+            <h1>Your feed</h1>
+            <div class="row just-between">
+                <div class="user">
+                    <img src="user-circle.png" alt="">
+                    <a href="#" id="add-avatar">Add an avatar</a>
+                    <h1 id="user-name">James Doe</h1>
+                </div>
+                <div class="col flex-end">
+                    <div class="comment">
+                        <div class="row align-cent just-between">
+                            <p class="comment-name">Neil M</p>
+                            <p class="likeCount">9 like(s)</p>
+                            <button class="likeButton" onclick="increaseLike(1)">Like</button>
+                        </div>
+                        <p class="comment-text">I just set up this new discord bot, let me know what you all think. <a href="#">link</a></p>
+                    </div>
+                    <div class="comment">
+                        <div class="row align-cent just-between">
+                            <p class="comment-name">Nichole K</p>
+                            <p class="likeCount">12 like(s)</p>
+                            <button class="likeButton" onclick="increaseLike(2)">Like</button>
+                        </div>
+                        <p class="comment-text">Just finished my <a href="#">next comic</a>, check it out.</p>
+                    </div>
+                    <div class="comment">
+                        <div class="row align-cent just-between">
+                            <p class="comment-name">Jim R</p>
+                            <p class="likeCount">9 like(s)</p>
+                            <button class="likeButton" onclick="increaseLike(3)">Like</button>
+                        </div>
+                        <p class="comment-text">I can't stop listening to the <a href="#">new album</a>. Who else is liking it?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
