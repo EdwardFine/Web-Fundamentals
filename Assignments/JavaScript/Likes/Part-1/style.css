@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+}
+.likeButton{
+    margin: 2em;
+    background-color: goldenrod;
+    width: 150px;
+    height: 35px;
+    font-size: 1.5em;
+}
+.user{
+    font-weight: bold;
+    font-size: 2em;
+    margin-left: 2em;
+    margin-right: 10em;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+.box{
+    border: 2px solid black;
+    width: 50%;
+}
+.comment{
+    margin: 0 1em 1em 1em;
+}
