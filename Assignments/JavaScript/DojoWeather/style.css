@@ -97,3 +97,7 @@ justify-content: center;
     cursor: pointer;
     font-weight: bold;
 }
+.fixed{
+    position: fixed;
+    width: 80%;
+}
