@@ -139,7 +139,7 @@ Bonus Level 1: Build a function return an array of those pokemon found.
 function secondFlying(pokémon){
     var typePoke = [];
     for (var i = 0; i < pokémon.length; i++) {
-        if (pokémon[i].types.length == 2 && pokémon[i].types[1] == "flying") {
+        if (pokémon[i].types.length >= 2 && pokémon[i].types[1] == "flying") {
             typePoke.push(pokémon[i]);
         }
     }
