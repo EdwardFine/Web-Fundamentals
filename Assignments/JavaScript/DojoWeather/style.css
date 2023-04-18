@@ -28,7 +28,7 @@ justify-content: center;
 .just-between{
     justify-content: space-between;
 }
-.bot-bord{
+.bot-border{
     border-bottom: 3px solid black;
 }
 #unit{
