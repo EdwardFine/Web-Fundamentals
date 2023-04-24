@@ -21,9 +21,9 @@ var no_effect = document.querySelector("#no-effect");
 
 var heroes = {
     "D.va": { "counters": ["Test", "test", "check"], "countered_by": [], "counter_each_other": [], "no_effect": [] },
-    "Doomfist": { "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] },
-    "Junker Queen":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] },
-    "Orisa":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] },
+    "Doomfist": { "counters": [], "countered_by": ["test","test"],"counter_each_other": [], "no_effect": [] },
+    "Junker Queen":{ "counters": [], "countered_by": [],"counter_each_other": ["test"], "no_effect": [] },
+    "Orisa":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": ["test"] },
     "Ramattra":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] },
     "Reinhardt":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] },
     "Roadhog":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] },
@@ -58,7 +58,6 @@ var heroes = {
     "Moira":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] },
     "Zenyatta":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": [] }
 }
-console.log(heroes[26])
 
 function scale(element, value, hero) {
     element.style.transform = "scale(" + value + ")";
@@ -72,18 +71,18 @@ function counter(element) {
     } else {
         active_hero = element.alt;
         active_hero_text.innerText = active_hero;
-        //Updates Lists with Counters
+        //Updates HTML with Counters
         for (var i = 0; i < heroes[element.alt]["counters"].length; i++) {
             counters.innerHTML += `<li>${heroes[element.alt]["counters"][i]}</li>`;
         }
         for (var i = 0; i < heroes[element.alt]["countered_by"].length; i++) {
-            counters.innerHTML += `<li>${heroes[element.alt]["countered_by"][i]}</li>`;
+            countered_by.innerHTML += `<li>${heroes[element.alt]["countered_by"][i]}</li>`;
         }
         for (var i = 0; i < heroes[element.alt]["counter_each_other"].length; i++) {
-            counters.innerHTML += `<li>${heroes[element.alt]["counter_each_other"][i]}</li>`;
+            counter_each_other.innerHTML += `<li>${heroes[element.alt]["counter_each_other"][i]}</li>`;
         }
         for (var i = 0; i < heroes[element.alt]["no_effect"].length; i++) {
-            counters.innerHTML += `<li>${heroes[element.alt]["no_effect"][i]}</li>`;
+            no_effect.innerHTML += `<li>${heroes[element.alt]["no_effect"][i]}</li>`;
         }
     }
 }
