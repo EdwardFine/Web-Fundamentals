@@ -20,7 +20,7 @@ var counter_each_other = document.querySelector("#counter-each-other");
 var no_effect = document.querySelector("#no-effect");
 
 var heroes = {
-    "D.va": { "counters": ["Test", "test", "check"], "countered_by": [], "counter_each_other": [], "no_effect": [] },
+    "D.va": { "counters": ["Reinhardt","Wrecking Ball","Ashe","Bastion","Cassidy","Junkrat","Sojourn","Soldier: 76","Sombra","Tracer","Widowmaker","Baptiste","Lifeweaver","Mercy"], "countered_by": ["Doomfist","Junker Queen","Orisa","Ramattra","Sigma","Zarya","Echo","Genji","Hanzo","Mei","Pharah","Reaper","Symmetra","Torbjörn","Brigitte","Kiriko","Lúcio","Moira","Zenyatta"], "counter_each_other": ["D.va","Roadhog","Winston","Ana"], "no_effect": [] },
     "Doomfist": { "counters": [], "countered_by": ["test","test"],"counter_each_other": [], "no_effect": [] },
     "Junker Queen":{ "counters": [], "countered_by": [],"counter_each_other": ["test"], "no_effect": [] },
     "Orisa":{ "counters": [], "countered_by": [],"counter_each_other": [], "no_effect": ["test"] },
