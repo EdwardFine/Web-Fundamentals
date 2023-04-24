@@ -1,0 +1,50 @@
+.flex-1{
+    flex: 1;
+}
+.bg-grad{
+    background: rgb(46,220,255);
+    background: linear-gradient(0deg, rgba(46,220,255,1) 0%, rgba(110,110,255,1) 100%);
+    width: 100%;
+    min-height: 1000px;
+}
+
+.hero-img{
+    width: 7.5em;
+    margin: 2px;
+    border: 1px solid black;
+    max-height: 11.825em;
+    transition: 300ms;
+}
+.text-align-center{
+    text-align: center;
+}
+.heroes-list-margin{
+    margin: 10px 2.5px 10px 2.5px;
+}
+.title{
+    font-size: 2.5em;
+}
+.role-filter{
+    width: 8em;
+    font-size: 2em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+.unselected-role{
+    opacity: 0.5;
+}
+.hide{
+    display: none;
+}
+.margin-top-10{
+    margin-top: 10em;
+}
+.current-hero{
+    font-size: 5em;
+}
+.counter{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
