@@ -12,157 +12,158 @@
 
 <body>
     <div class="bg-grad">
-        <div class="container">
-            <div class="d-flex p-2 text-align-center justify-content-center flex-wrap">
-                <span class="navbar-brand mb-0 h1">
-                    <span class="title"> Overwatch Counter Picker</span> <br>
-                    Select the hero to view their counters and who they counter.
-                </span>
-            </div>
+        <div class="d-flex p-2 text-align-center justify-content-center flex-wrap">
+            <span class="navbar-brand mb-0 h1">
+                <span class="title"> Overwatch Counter Picker</span> <br>
+                Select the hero to view their counters and who they counter.
+            </span>
+        </div>
 
-            <div class="d-flex justify-content-center gap-5">
-                <button class="role-filter gap-3" id="tank-filter" onclick="filterRoles(1)">
-                    <img src="https://images.blz-contentstack.com/v3/assets/blt9c12f249ac15c7ec/bltcb94e9203be4088a/dark_circle_tank.svg" alt="Tank Symbol"> 
-                    Tank
-                </button>
-                <button class="role-filter gap-3" id="damage-filter" onclick="filterRoles(2)">
-                    <img src="https://images.blz-contentstack.com/v3/assets/blt9c12f249ac15c7ec/blt052e8b02aef879b0/dark_circle_damage.svg" alt="Damage Symbol">
-                    Damage
-                </button>
-                <button class="role-filter gap-3" id="support-filter" onclick="filterRoles(3)">
-                    <img src="https://images.blz-contentstack.com/v3/assets/blt9c12f249ac15c7ec/blt8cf279e9b3126ef8/dark_circle_support.svg" alt="Support Symbol">
-                    Support
-                </button>
-                <button class="role-filter" onclick="filterRoles(0)">Reset</button>
+        <div class="d-flex justify-content-center gap-5">
+            <button class="role-filter gap-3" id="tank-filter" onclick="filterRoles(1)">
+                <img src="https://images.blz-contentstack.com/v3/assets/blt9c12f249ac15c7ec/bltcb94e9203be4088a/dark_circle_tank.svg"
+                    alt="Tank Symbol">
+                Tank
+            </button>
+            <button class="role-filter gap-3" id="damage-filter" onclick="filterRoles(2)">
+                <img src="https://images.blz-contentstack.com/v3/assets/blt9c12f249ac15c7ec/blt052e8b02aef879b0/dark_circle_damage.svg"
+                    alt="Damage Symbol">
+                Damage
+            </button>
+            <button class="role-filter gap-3" id="support-filter" onclick="filterRoles(3)">
+                <img src="https://images.blz-contentstack.com/v3/assets/blt9c12f249ac15c7ec/blt8cf279e9b3126ef8/dark_circle_support.svg"
+                    alt="Support Symbol">
+                Support
+            </button>
+            <button class="role-filter" onclick="filterRoles(0)">Reset</button>
 
-            </div>
+        </div>
 
-            <div class="d-flex flex-wrap">
-                <div class="flex-1 text-align-center heroes-list-margin" id="tank">
-                    <h1 class="role">Tank</h1>
-                    <div class="d-flex flex-wrap justify-content-center align-content-start">
-                        <img src="assets/dva.PNG" class="hero-img" alt="D.va" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/doomfist.PNG" class="hero-img" alt="Doomfist" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/junker_queen.PNG" class="hero-img" alt="Junker Queen"
-                            onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/orisa.PNG" class="hero-img" alt="Orisa" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/ramattra.PNG" class="hero-img" alt="Ramattra" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/reinhardt.PNG" class="hero-img" alt="Reinhardt" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/roadhog.PNG" class="hero-img" alt="Roadhog" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/sigma.PNG" class="hero-img" alt="Sigma" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/winston.PNG" class="hero-img" alt="Winston" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/wrecking_ball.PNG" class="hero-img" alt="Wrecking Ball"
-                            onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/zarya.PNG" class="hero-img" alt="Zarya" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                    </div>
-                </div>
-                <div class="flex-1 text-align-center heroes-list-margin" id="damage">
-                    <h1 class="role">Damage</h1>
-                    <div class="d-flex flex-wrap justify-content-center align-content-start">
-                        <img src="assets/ashe.PNG" class="hero-img" alt="Ashe" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/bastion.PNG" class="hero-img" alt="Bastion" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/cassidy.PNG" class="hero-img" alt="Cassidy" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/echo.PNG" class="hero-img" alt="Echo" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/genji.PNG" class="hero-img" alt="Genji" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/hanzo.PNG" class="hero-img" alt="Hanzo" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/junkrat.PNG" class="hero-img" alt="Junkrat" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/mei.PNG" class="hero-img" alt="Mei" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/pharah.PNG" class="hero-img" alt="Pharah" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/reaper.PNG" class="hero-img" alt="Reaper" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/sojourn.PNG" class="hero-img" alt="Sojourn" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/soldier_76.PNG" class="hero-img" alt="Soldier: 76"
-                            onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/sombra.PNG" class="hero-img" alt="Sombra" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/symmetra.PNG" class="hero-img" alt="Symmetra" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/torbjorn.PNG" class="hero-img" alt="Torbjörn" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/tracer.PNG" class="hero-img" alt="Tracer" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/widowmaker.PNG" class="hero-img" alt="Widowmaker"
-                            onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
-                    </div>
-                </div>
-                <div class="flex-1 text-align-center heroes-list-margin" id="support">
-                    <h1 class="role">Support</h1>
-                    <div class="d-flex flex-wrap justify-content-center align-content-start">
-                        <img src="assets/ana.PNG" class="hero-img" alt="Ana" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/baptiste.PNG" class="hero-img" alt="Baptiste" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/brigitte.PNG" class="hero-img" alt="Brigitte" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/kiriko.PNG" class="hero-img" alt="Kiriko" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/lifeweaver.PNG" class="hero-img" alt="Lifeweaver"
-                            onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/lucio.PNG" class="hero-img" alt="Lúcio" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/mercy.PNG" class="hero-img" alt="Mercy" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/moira.PNG" class="hero-img" alt="Moira" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                        <img src="assets/zenyatta.PNG" class="hero-img" alt="Zenyatta" onmouseover="scale(this, 1.05,alt)"
-                            onmouseleave="scale(this, 1)" onclick="counter(this)">
-                    </div>
+        <div class="d-flex flex-wrap">
+            <div class="flex-1 text-align-center heroes-list-margin" id="tank">
+                <h1 class="role">Tank</h1>
+                <div class="d-flex flex-wrap justify-content-center align-content-start">
+                    <img src="assets/dva.PNG" class="hero-img" alt="D.va" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/doomfist.PNG" class="hero-img" alt="Doomfist" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/junker_queen.PNG" class="hero-img" alt="Junker Queen"
+                        onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/orisa.PNG" class="hero-img" alt="Orisa" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/ramattra.PNG" class="hero-img" alt="Ramattra" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/reinhardt.PNG" class="hero-img" alt="Reinhardt" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/roadhog.PNG" class="hero-img" alt="Roadhog" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/sigma.PNG" class="hero-img" alt="Sigma" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/winston.PNG" class="hero-img" alt="Winston" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/wrecking_ball.PNG" class="hero-img" alt="Wrecking Ball"
+                        onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/zarya.PNG" class="hero-img" alt="Zarya" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
                 </div>
             </div>
-
-            <div class="current-hero text-align-center">No Active Hero</div>
-            <div class="d-flex justify-content-between text-align-center">
-                <div>
-                    <h1>Counters</h1>
-                    <ul class="counter" id="counter">
-                    </ul>
+            <div class="flex-1 text-align-center heroes-list-margin" id="damage">
+                <h1 class="role">Damage</h1>
+                <div class="d-flex flex-wrap justify-content-center align-content-start">
+                    <img src="assets/ashe.PNG" class="hero-img" alt="Ashe" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/bastion.PNG" class="hero-img" alt="Bastion" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/cassidy.PNG" class="hero-img" alt="Cassidy" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/echo.PNG" class="hero-img" alt="Echo" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/genji.PNG" class="hero-img" alt="Genji" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/hanzo.PNG" class="hero-img" alt="Hanzo" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/junkrat.PNG" class="hero-img" alt="Junkrat" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/mei.PNG" class="hero-img" alt="Mei" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/pharah.PNG" class="hero-img" alt="Pharah" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/reaper.PNG" class="hero-img" alt="Reaper" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/sojourn.PNG" class="hero-img" alt="Sojourn" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/soldier_76.PNG" class="hero-img" alt="Soldier: 76"
+                        onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/sombra.PNG" class="hero-img" alt="Sombra" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/symmetra.PNG" class="hero-img" alt="Symmetra" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/torbjorn.PNG" class="hero-img" alt="Torbjörn" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/tracer.PNG" class="hero-img" alt="Tracer" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/widowmaker.PNG" class="hero-img" alt="Widowmaker"
+                        onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
                 </div>
-                <div>
-                    <h1>Countered By</h1>
-                    <ul class="counter" id="countered-by">
-    
-                    </ul>
-                </div>
-                <div>
-                    <h1>Counters Each Other</h1>
-                    <ul class="counter" id="counter-each-other">
-    
-                    </ul>
-                </div>
-                <div>
-                    <h1>No Effect</h1>
-                    <ul class="counter" id="no-effect">
-    
-                    </ul>
+            </div>
+            <div class="flex-1 text-align-center heroes-list-margin" id="support">
+                <h1 class="role">Support</h1>
+                <div class="d-flex flex-wrap justify-content-center align-content-start">
+                    <img src="assets/ana.PNG" class="hero-img" alt="Ana" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/baptiste.PNG" class="hero-img" alt="Baptiste" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/brigitte.PNG" class="hero-img" alt="Brigitte" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/kiriko.PNG" class="hero-img" alt="Kiriko" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/lifeweaver.PNG" class="hero-img" alt="Lifeweaver"
+                        onmouseover="scale(this, 1.05,alt)" onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/lucio.PNG" class="hero-img" alt="Lúcio" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/mercy.PNG" class="hero-img" alt="Mercy" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/moira.PNG" class="hero-img" alt="Moira" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
+                    <img src="assets/zenyatta.PNG" class="hero-img" alt="Zenyatta" onmouseover="scale(this, 1.05,alt)"
+                        onmouseleave="scale(this, 1)" onclick="counter(this)">
                 </div>
             </div>
         </div>
 
-        
+        <div class="current-hero text-align-center">No Active Hero</div>
+        <div class="d-flex justify-content-evenly text-align-center">
+            <div>
+                <h1>Counters</h1>
+                <ul class="counter" id="counter">
+                </ul>
+            </div>
+            <div>
+                <h1>Countered By</h1>
+                <ul class="counter" id="countered-by">
+
+                </ul>
+            </div>
+            <div>
+                <h1>Counters Each Other</h1>
+                <ul class="counter" id="counter-each-other">
+
+                </ul>
+            </div>
+            <div>
+                <h1>No Effect</h1>
+                <ul class="counter" id="no-effect">
+
+                </ul>
+            </div>
+        </div>
+
+
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-            crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
