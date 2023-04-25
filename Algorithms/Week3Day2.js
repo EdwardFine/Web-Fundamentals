@@ -51,21 +51,19 @@ console.log(diagonalDifference(squareMatrix3));
  *    Returns -1 if array is not a square.
  */
 function diagonalDifference(sqrMatrix) {
-
     // code goes here!
     var diag1=0;
     var diag2=0;
     var length = sqrMatrix.length
     for(i=0;i<length;i++){
-        if(sqrMatrix.length == sqrMatrix[i].length){
+        if(length == sqrMatrix[i].length){
             diag1 += sqrMatrix[i][i];
             diag2 += sqrMatrix[length -1 -i][i];
         }else{
             return -1;
         }
     }
-    var result = Math.abs(diag1-diag2);
-    return result;
+    return Math.abs(diag1-diag2);
 }
 // Math.abs()
 // Reminder for getting an absolute value, we could use the Math library in JS after we get the difference of the sums!)
