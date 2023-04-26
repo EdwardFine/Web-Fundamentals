@@ -59,6 +59,7 @@
 .counter{
     font-size: 1.5em;
     margin-bottom: 1em;
+    margin-right: 1em;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -69,8 +70,8 @@
     padding-right: 7em;
 }
 .active-title{
-    margin-left: 3em;
+    margin-left: 2.75em;
 }
 li{
-    margin-right: 2em;
+    margin-right: 1em;
 }
