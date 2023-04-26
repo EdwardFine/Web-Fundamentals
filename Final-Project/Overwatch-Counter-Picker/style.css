@@ -1,6 +1,9 @@
 .flex-1{
     flex: 1;
 }
+.flex-1-5{
+    flex: 1.5;
+}
 .bg-grad{
     background: rgb(46,220,255);
     background: linear-gradient(0deg, rgba(46,220,255,1) 0%, rgba(110,110,255,1) 100%);
@@ -18,7 +21,7 @@
 }
 
 .hero-img{
-    width: 6.25em;
+    width: 7em;
     background-color: rgb(200, 221, 248);
     margin:2.5px;
     transition: 300ms;
@@ -56,4 +59,18 @@
 .counter{
     font-size: 1.5em;
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height:25em;
+}
+.against-margin{
+    margin-left: 2em;
+    padding-right: 7em;
+}
+.active-title{
+    margin-left: 3em;
+}
+li{
+    margin-right: 2em;
 }
