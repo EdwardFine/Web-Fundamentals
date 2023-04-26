@@ -9,6 +9,7 @@
     background: linear-gradient(0deg, rgba(46,220,255,1) 0%, rgba(110,110,255,1) 100%);
     width: 100%;
     min-height: 1000px;
+    overflow-x: hidden;
 }
 .hero-card{
     width: 6em;
@@ -65,6 +66,9 @@
     flex-wrap: wrap;
     height:25em;
 }
+.counter-column{
+    margin-right: 2em;
+}
 .against-margin{
     margin-left: 2em;
     padding-right: 7em;
@@ -73,5 +77,5 @@
     margin-left: 2.75em;
 }
 li{
-    margin-right: 1em;
+    margin-right: 1.5em;
 }
