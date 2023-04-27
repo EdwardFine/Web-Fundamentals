@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Minesweeper</title>
+</head>
+
+<body>
+    <div class="row just-center">
+        <div class="container align-center column">
+            <div class="row align-center diff-margin">
+                <select name="difficulty" id="difficulty-selector" aria-placeholder onchange="updateDifficulty(value)">
+                    <option value=1>Easy   (9x9, Mines:10)</option>
+                    <option value=2>Medium   (16x16, Mines:40)</option>
+                    <option value=3>Hard   (16x30, Mines:99)</option>
+                </select>
+                <label for="difficulty">Difficulty</label>
+            </div>
+            <div class="minesweeper-box">
+                <div class="row minesweeper-content align-center just-between" id="minesweeper-header">
+                    <div class="row" id="mine-count">
+                    </div>
+                    <div id="face-button" onmousedown="pressFace()" onmouseup="resetGame()" onmouseleave="unpressFace()">
+                    </div>
+                    <div class="row" id="time">
+                    </div>
+                </div>
+                <div class="row minesweeper-content flex-wrap" id="minefield">
+                    <div class="unmarked-block" onmousedown="pressBlock(this)" onmouseleave="unpressBlock(this)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

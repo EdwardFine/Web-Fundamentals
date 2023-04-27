@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+
+.row {
+    display: flex;
+}
+
+.just-center {
+    justify-content: center;
+}
+
+.just-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+    display: flex;
+}
+
+.container {
+    width: 80%;
+}
+
+.minesweeper-box {
+    background-color: lightgray;
+    border-top: 2px solid white;
+    border-right: 2px solid gray;
+    border-left: 2px solid white;
+    border-bottom: 2px solid gray;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.minesweeper-content {
+    border-bottom: 2px solid white;
+    border-left: 2px solid gray;
+    border-top: 2px solid gray;
+    border-right: 2px solid white;
+}
+
+#minesweeper-header {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#difficulty-selector {
+    border: 2px solid gray;
+}
+
+.diff-margin {
+    margin-top: 25px;
+}
+
+
+
+
+
+/* Images */
+.facesmile {
+    background-position: 0 -55px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 26px;
+    height: 26px;
+}
+
+.facesmile-pressed {
+    background-position: -26px -55px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 26px;
+    height: 26px;
+}
+
+.number-0 {
+    background-position: 0px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-1 {
+    background-position: -13px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-2 {
+    background-position: -26px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-3 {
+    background-position: -39px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-4 {
+    background-position: -52px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-5 {
+    background-position: -65px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-6 {
+    background-position: -78px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-7 {
+    background-position: -91px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-8 {
+    background-position: -104px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+
+.number-9 {
+    background-position: -117px 0px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 13px;
+    height: 23px;
+}
+.unmarked-block {
+    background-position: 0px -39px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 16px;
+    height: 16px;
+}
+.pressed-block{
+    background-position: 0px -23px;
+    background-image: url(https://minesweeperonline.com/sprite100.gif);
+    width: 16px;
+    height: 16px;
+}
