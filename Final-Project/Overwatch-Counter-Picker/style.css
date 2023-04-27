@@ -8,7 +8,7 @@
     background: rgb(46,220,255);
     background: linear-gradient(0deg, rgba(46,220,255,1) 0%, rgba(110,110,255,1) 100%);
     width: 100%;
-    min-height: 1000px;
+    height: 1440px;
     overflow-x: hidden;
 }
 .hero-card{
