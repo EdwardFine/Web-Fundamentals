@@ -28,22 +28,21 @@ function generatePascalsTriangle(n) {
     let triangle = []; //create triangle array
     var temp;
     // Code Here!
-    if(n>2){
+    if(n>0){
         triangle.push([1])
-        triangle.push([1,1])
-        for(var i=2;i<n;i++){
-            temp=[1];
-            for(var j=1;j<i;j++){
-                temp.push(triangle[i-1][j-1]+triangle[i-1][j]);
+        if(n>1){
+            triangle.push([1,1])
+            if(n>2){
+                for(var i=2;i<n;i++){
+                    temp=[1];
+                    for(var j=1;j<i;j++){
+                        temp.push(triangle[i-1][j-1]+triangle[i-1][j]);
+                    }
+                    temp.push(1);
+                    triangle.push(temp)
+                }
             }
-            temp.push(1);
-            triangle.push(temp)
         }
-    }else if(n==2){
-        triangle.push([1])
-        triangle.push([1,1])
-    }else if(n==1){
-        triangle.push([1])
     }else{
         return null;
     }
