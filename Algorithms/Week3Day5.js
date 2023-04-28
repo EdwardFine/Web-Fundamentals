@@ -43,10 +43,10 @@ function generatePascalsTriangle(n) {
                 }
             }
         }
+        return triangle;
     }else{
         return null;
     }
-    return triangle;
 }
 
 
