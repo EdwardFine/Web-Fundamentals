@@ -34,9 +34,9 @@ function interleaveArrays(arr1, arr2) {
     if(arr1.length > arr2.length){
         const longest = arr1.length;
     }else{
-        const longest = arr2.length
+        const longest = arr2.length;
     }
-    let interleave = []
+    let interleave = [];
     for(let i = 0; i < longest; i++){
         if(i < arr1.length){
             interleave.push(arr1[i]);
