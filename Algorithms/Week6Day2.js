@@ -32,12 +32,12 @@ const expected4 = [42, 0, 6];
  */
 function interleaveArrays(arr1, arr2) {
     if(arr1.length > arr2.length){
-        let longest = arr1.length;
+        const longest = arr1.length;
     }else{
-        let longest = arr2.length
+        const longest = arr2.length
     }
     let interleave = []
-    for(var i = 0; i < longest; i++){
+    for(let i = 0; i < longest; i++){
         if(i < arr1.length){
             interleave.push(arr1[i]);
         }
