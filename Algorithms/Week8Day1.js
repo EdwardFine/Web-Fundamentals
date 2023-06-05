@@ -25,15 +25,15 @@ const numsReversed = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
  * @returns {Array<number>} The given nums after being sorted.
  */
 const bubbleSort = (nums) => {
-    for(let i=nums.length-1;i>0;i--){
+    for (let i = nums.length - 1; i > 0; i--) {
         let changes = 0;
-        for(let j=0;j<i;j++){
-            if(nums[j] > nums[j+1]){
+        for (let j = 0; j < i; j++) {
+            if (nums[j] > nums[j + 1]) {
                 changes++;
-                [nums[j],nums[j+1]]=[nums[j+1],nums[j]];
+                [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]];
             }
         }
-        if(changes==0){
+        if (changes == 0) {
             break;
         }
     }
