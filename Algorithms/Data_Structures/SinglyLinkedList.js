@@ -166,12 +166,10 @@ class SLList {
         if (this.isEmpty()) {
             return false;
         } let runner = this.head;
-        while (runner.next != null) {
+        while (runner != null) {
             if (runner.value === val) {
                 return true;
             } runner = runner.next;
-        } if (runner.value === val) {
-            return true;
         } return false;
     }
 
