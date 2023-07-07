@@ -209,11 +209,11 @@ class SLList {
     recursiveMax(runner = this.head, maxNode = this.head) {
         if (this.isEmpty()) {
             return null;
-        }if(runner === null){
-            return maxNode;
-        }else if(runner.value > maxNode.value){
+        } if (runner === null) {
+            return maxNode.value;
+        } else if (runner.value > maxNode.value) {
             maxNode = runner;
-        }return this.recursiveMax(runner.next,maxNode);
+        } return this.recursiveMax(runner.next, maxNode);
     }
 
     //****** Thursday *******
@@ -231,7 +231,7 @@ class SLList {
         } let current = this.head;
         while (current.next.next != null) {
             current = current.next;
-        } return current;
+        } return current.value;
     }
 
     /**
@@ -271,7 +271,7 @@ class SLList {
     prepend(newVal, targetVal) {
         if (this.isEmpty()) {
             return false;
-        }let current = this.head;
+        } let current = this.head;
         if (current.value === targetVal) {
             this.addToFront(newVal);
             return true;
@@ -279,11 +279,11 @@ class SLList {
         while (current.next != null) {
             if (current.next.value === targetVal) {
                 let prepend = new SLNode(newVal);
-                prepend.next=current.next;
+                prepend.next = current.next;
                 current.next = prepend;
                 return true;
             } current = current.next;
-        }return false;
+        } return false;
     }
 
     //****** Friday *******
@@ -295,7 +295,18 @@ class SLList {
      *    whose nodes will be added to the back of this list.
      * @returns {SinglyLinkedList} This list with the added nodes.
      */
-    concat(addList) { }
+    concat(addList) {
+        if (addList.isEmpty()) {
+            return this;
+        } if (this.isEmpty()) {
+            this.head = addList.head;
+            return this;
+        } let runner = this.head;
+        while (runner.next != null) {
+            runner = runner.next;
+        } runner.next = addList.head;
+        return this;
+    }
 
     /**
      * Finds the node with the smallest data and moves that node to the front of
@@ -304,7 +315,19 @@ class SLList {
      * - Space: O(?).
      * @returns {SinglyLinkedList} This list.
      */
-    moveMinToFront() { }
+    moveMinToFront() {
+        if (this.isEmpty()) {
+            return this;
+        } let runner = this.head;
+        let min = runner.value;
+        while (runner != null) {
+            if (runner.value < min) {
+                min = runner.value;
+            } runner = runner.next;
+        }this.removeVal(min);
+        this.addToFront(min);
+        return this;
+    }
 
     // EXTRA
     /**
@@ -318,7 +341,24 @@ class SLList {
      * @returns {SinglyLinkedList} The split list containing the nodes that are
      *    no longer in this list.
      */
-    splitOnVal(val) { }
+    splitOnVal(val) {
+        if (this.isEmpty()) {
+            return this;
+        } let newList = new SLList();
+        if (this.head.value === val) {
+            newList.head = this.head;
+            this.head = null;
+        } else {
+            let runner = this.head;
+            while (runner.next != null) {
+                if (runner.next.value === val) {
+                    newList.head = runner.next;
+                    runner.next = null;
+                    break;
+                } runner = runner.next;
+            }
+        } return newList;
+    }
 
 
     // Here's a gimme: This will print the contents of a singly linked list.
@@ -345,23 +385,51 @@ Below commented code depends on insertAtBack method to be completed,
 after completing it, uncomment the code.
 */
 let myList = new SLList();
+let myList2 = new SLList();
+
 myList.addToBack(1).addToBack(2).addToBack(3).addToBack(4).addToBack(5).addToBack(-8).addToBack(-5);
-myList.printList()
+myList2.addToBack(1).addToBack(2).addToBack(3).addToBack(4).addToBack(5).addToBack(-8).addToBack(-5);
+
+myList.printList();
+
 console.log(myList.average());
+
 myList.removeBack().printList().removeHead().printList();
+
 console.log(myList.contains(4));
 console.log(myList.contains(-8));
 console.log(myList.contains(1));
+
 myList.addToBackRecursive(7);
+
 myList.printList();
+
 console.log(myList.containsRecursive(2));
 console.log(myList.containsRecursive(6));
-console.log(myList.secondToLast().value);
+
+console.log(myList.secondToLast());
+
 console.log(myList.removeVal(4));
+
 myList.printList();
-console.log(myList.prepend(6,-8));
+
+console.log(myList.prepend(6, -8));
+
 myList.printList();
-console.log(myList.recursiveMax().value);
+
+console.log(myList.recursiveMax());
+
+myList.concat(myList2);
+
+myList.printList();
+
+myList.moveMinToFront();
+
+myList.printList();
+
+let myListSplit = myList.splitOnVal(1);
+myListSplit.printList();
+myList.printList();
 
   // const singleNodeList = new SinglyLinkedList().addToBack([1]);
   // const biNodeList = new SinglyLinkedList().addToBack([1, 2]);
