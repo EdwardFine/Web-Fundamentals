@@ -191,7 +191,7 @@ class BinarySearchTree {
                     current.left = new BSTNode(newVal);
                     return this;
                 }current = current.left;
-            }else if(current.data < newVal){
+            }else{
                 if(current.right == null){
                     current.right = new BSTNode(newVal);
                     return this;
