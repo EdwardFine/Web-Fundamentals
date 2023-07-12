@@ -76,9 +76,9 @@ class BinarySearchTree {
     minRecursive(current = this.root) {
         if (this.isEmpty()) {
             return null;
-        }if(current.left == null){
+        } if (current.left == null) {
             return current.data;
-        }return this.minRecursive(current.left);
+        } return this.minRecursive(current.left);
     }
 
     /**
@@ -109,9 +109,9 @@ class BinarySearchTree {
     maxRecursive(current = this.root) {
         if (this.isEmpty()) {
             return null;
-        }if(current.right == null){
+        } if (current.right == null) {
             return current.data;
-        }return this.maxRecursive(current.right);
+        } return this.maxRecursive(current.right);
     }
 
     /**
@@ -126,15 +126,15 @@ class BinarySearchTree {
             return false;
         }
         let current = this.root;
-        while(current != null){
-            if(current.data==searchVal){
+        while (current != null) {
+            if (current.data == searchVal) {
                 return true;
-            }else if(current.data > searchVal){
+            } else if (current.data > searchVal) {
                 current = current.left;
-            }else{
+            } else {
                 current = current.right;
             }
-        }return false;
+        } return false;
     }
 
     /**
@@ -147,14 +147,14 @@ class BinarySearchTree {
     containsRecursive(searchVal, current = this.root) {
         if (this.isEmpty()) {
             return false;
-        }if(current == null){
+        } if (current == null) {
             return false;
-        }else if(current.data == searchVal){
+        } else if (current.data == searchVal) {
             return true;
-        }else if(current.data > searchVal){
-            return this.containsRecursive(searchVal,current.left);
+        } else if (current.data > searchVal) {
+            return this.containsRecursive(searchVal, current.left);
         }
-        return this.containsRecursive(searchVal,current.right);
+        return this.containsRecursive(searchVal, current.right);
     }
 
     /**
@@ -169,7 +169,62 @@ class BinarySearchTree {
         if (this.isEmpty()) {
             return null;
         }
-        return (this.max()-this.min());
+        return (this.max() - this.min());
+    }
+
+    /**
+ * Inserts a new node with the given newVal in the right place to preserver
+ * the order of this tree.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {number} newVal The data to be added to a new node.
+ * @returns {BinarySearchTree} This tree.
+ */
+    insert(newVal) {
+        if(this.isEmpty()){
+            this.root = new BSTNode(newVal);
+            return this;
+        }let current = this.root;
+        while(true){
+            if(current.data > newVal){
+                if(current.left == null){
+                    current.left = new BSTNode(newVal);
+                    return this;
+                }current = current.left;
+            }else if(current.data < newVal){
+                if(current.right == null){
+                    current.right = new BSTNode(newVal);
+                    return this;
+                }current = current.right;
+            }
+        }
+    }
+
+    /**
+     * Inserts a new node with the given newVal in the right place to preserver
+     * the order of this tree.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {number} newVal The data to be added to a new node.
+     * @param {Node} curr The node that is currently accessed from the tree as
+     *    the tree is being traversed.
+     * @returns {BinarySearchTree} This tree.
+     */
+    insertRecursive(newVal, curr = this.root) {
+        if(curr === null){
+            this.root = new BSTNode(newVal);
+            return this;
+        }if(curr.data > newVal){
+            if(curr.left === null){
+                curr.left = new BSTNode(newVal);
+                return this;
+            }
+            return this.insertRecursive(newVal,curr.left);
+        }if(curr.right === null){
+            curr.right = new BSTNode(newVal);
+            return this;
+        }
+        return this.insertRecursive(newVal,curr.right);
     }
 
     // Logs this tree horizontally with the root on the left.
@@ -263,22 +318,25 @@ console.log(threeLevelTree.range());
         10     22      35     70
       /   \   /  \    /  \   /  \
     4    12  18  24  31  44 66  90
+        /
+       11
 */
 /***************** Uncomment after insert method is created. ****************/
-  // const fullTree = new BinarySearchTree();
-  // fullTree
-  //   .insert(25)
-  //   .insert(15)
-  //   .insert(10)
-  //   .insert(22)
-  //   .insert(4)
-  //   .insert(12)
-  //   .insert(18)
-  //   .insert(24)
-  //   .insert(50)
-  //   .insert(35)
-  //   .insert(70)
-  //   .insert(31)
-  //   .insert(44)
-  //   .insert(66)
-  //   .insert(90);
+const fullTree = new BinarySearchTree();
+fullTree
+.insertRecursive(25)
+.insertRecursive(15)
+.insertRecursive(10)
+.insertRecursive(22)
+.insertRecursive(4)
+.insertRecursive(12)
+.insertRecursive(18)
+.insertRecursive(24)
+.insertRecursive(50)
+.insertRecursive(35)
+.insertRecursive(70)
+.insertRecursive(31)
+.insertRecursive(44)
+.insertRecursive(66)
+.insertRecursive(90)
+.insertRecursive(11).print();
