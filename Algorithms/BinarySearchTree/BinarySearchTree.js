@@ -161,11 +161,10 @@ class BinarySearchTree {
      * Calculates the range (max - min) from the given startNode.
      * - Time: O(?).
      * - Space: O(?).
-     * @param {Node} startNode The node to start from to calculate the range.
      * @returns {number|null} The range of this tree or a sub tree depending on if the
      *    startNode is the root or not.
      */
-    range(startNode = this.root) {
+    range() {
         if (this.isEmpty()) {
             return null;
         }
