@@ -180,21 +180,21 @@ class BinarySearchTree {
  * @returns {BinarySearchTree} This tree.
  */
     insert(newVal) {
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             this.root = new BSTNode(newVal);
             return this;
-        }let current = this.root;
-        while(true){
-            if(current.data > newVal){
-                if(current.left == null){
+        } let current = this.root;
+        while (true) {
+            if (current.data > newVal) {
+                if (current.left == null) {
                     current.left = new BSTNode(newVal);
                     return this;
-                }current = current.left;
-            }else{
-                if(current.right == null){
+                } current = current.left;
+            } else {
+                if (current.right == null) {
                     current.right = new BSTNode(newVal);
                     return this;
-                }current = current.right;
+                } current = current.right;
             }
         }
     }
@@ -210,22 +210,125 @@ class BinarySearchTree {
      * @returns {BinarySearchTree} This tree.
      */
     insertRecursive(newVal, curr = this.root) {
-        if(curr === null){
+        if (curr === null) {
             this.root = new BSTNode(newVal);
             return this;
-        }if(curr.data > newVal){
-            if(curr.left === null){
+        } if (curr.data > newVal) {
+            if (curr.left === null) {
                 curr.left = new BSTNode(newVal);
                 return this;
             }
-            return this.insertRecursive(newVal,curr.left);
-        }if(curr.right === null){
+            return this.insertRecursive(newVal, curr.left);
+        } if (curr.right === null) {
             curr.right = new BSTNode(newVal);
             return this;
         }
-        return this.insertRecursive(newVal,curr.right);
+        return this.insertRecursive(newVal, curr.right);
     }
 
+    /**
+  * DFS Preorder: (CurrNode, Left, Right)
+  * Converts this BST into an array following Depth First Search preorder.
+  * Example on the fullTree var:
+  * [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
+  * @param {Node} node The current node during the traversal of this tree.
+  * @param {Array<number>} vals The data that has been visited so far.
+  * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
+  */
+    toArrPreorder(node = this.root, vals = []) {
+        if (node === null) {
+            return vals;
+        }
+        vals.push(node.data);
+        this.toArrPreorder(node.left, vals);
+        this.toArrPreorder(node.right, vals);
+        return vals;
+    }
+
+    /**
+     * DFS Inorder: (Left, CurrNode, Right)
+     * Converts this BST into an array following Depth First Search inorder.
+     * Example on the fullTree var:
+     * [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
+     * @param {Node} node The current node during the traversal of this tree.
+     * @param {Array<number>} vals The data that has been visited so far.
+     * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
+     */
+    toArrInorder(node = this.root, vals = []) {
+        if (node === null) {
+            return vals;
+        }
+        this.toArrInorder(node.left, vals);
+        vals.push(node.data);
+        this.toArrInorder(node.right, vals);
+        return vals;
+    }
+
+    /**
+     * DFS Postorder (Left, Right, CurrNode)
+     * Converts this BST into an array following Depth First Search postorder.
+     * Example on the fullTree var:
+     * [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
+     * @param {Node} node The current node during the traversal of this tree.
+     * @param {Array<number>} vals The data that has been visited so far.
+     * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
+     */
+    toArrPostorder(node = this.root, vals = []) {
+        if (node === null) {
+            return vals;
+        }
+        this.toArrPostorder(node.left, vals);
+        this.toArrPostorder(node.right, vals);
+        vals.push(node.data);
+        return vals;
+    }
+
+    //THIS IS NOT MY CODE, IT CAME FROM https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/ . 
+    //WAS WALKING THROUGH FOR UNDERSTANDING
+    toArrPostorderIterative(node = this.root, list = []) {
+        let S = [];
+        // Check for empty tree
+        if (node == null){
+            return list;
+        }
+        S.push(node);
+        let prev = null;
+        while (S.length != 0) {
+            let current = S[S.length - 1];
+
+            /* go down the tree in search of a leaf an if so process it and pop stack otherwise move down */
+            if (prev == null || prev.left == current || prev.right == current) {
+                if (current.left != null)
+                    S.push(current.left);
+                else if (current.right != null)
+                    S.push(current.right);
+                else {
+                    S.pop();
+                    list.push(current.data);
+                }
+
+                /* go up the tree from left node, if the child is rightpush it onto stack otherwise process parent and pop stack */
+            }
+            else if (current.left == prev) {
+                if (current.right != null)
+                    S.push(current.right);
+                else {
+                    S.pop();
+                    list.push(current.data);
+                }
+
+                /* go up the tree from right node and after coming back from right node process parent and pop stack */
+            }
+            else if (current.right == prev) {
+                S.pop();
+                list.push(current.data);
+            }
+
+            prev = current;
+        }
+
+        return list;
+    }
     // Logs this tree horizontally with the root on the left.
     print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
         if (!node) {
@@ -323,19 +426,32 @@ console.log(threeLevelTree.range());
 /***************** Uncomment after insert method is created. ****************/
 const fullTree = new BinarySearchTree();
 fullTree
-.insertRecursive(25)
-.insertRecursive(15)
-.insertRecursive(10)
-.insertRecursive(22)
-.insertRecursive(4)
-.insertRecursive(12)
-.insertRecursive(18)
-.insertRecursive(24)
-.insertRecursive(50)
-.insertRecursive(35)
-.insertRecursive(70)
-.insertRecursive(31)
-.insertRecursive(44)
-.insertRecursive(66)
-.insertRecursive(90)
-.insertRecursive(11).print();
+    .insertRecursive(25)
+    .insertRecursive(15)
+    .insertRecursive(10)
+    .insertRecursive(22)
+    .insertRecursive(4)
+    .insertRecursive(12)
+    .insertRecursive(18)
+    .insertRecursive(24)
+    .insertRecursive(50)
+    .insertRecursive(35)
+    .insertRecursive(70)
+    .insertRecursive(31)
+    .insertRecursive(44)
+    .insertRecursive(66)
+    .insertRecursive(90)
+    //.insertRecursive(11)
+    //.print()
+    ;
+
+//[25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
+console.log(fullTree.toArrPreorder());
+
+//[4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
+console.log(fullTree.toArrInorder());
+
+//[4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
+console.log(fullTree.toArrPostorder());
+
+console.log(fullTree.toArrPostorderIterative());
