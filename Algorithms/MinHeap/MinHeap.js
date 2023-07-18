@@ -72,9 +72,10 @@ class MinHeap {
    * @returns {?number} The min number or null if empty.
    */
     extract() {
-        if(this.top()==null){
+        const min = this.top();
+        if(min===null){
             return null;
-        }const min = this.top();
+        }
         this.heap[1]=this.heap.pop();
         let i=1;
         while(true){
