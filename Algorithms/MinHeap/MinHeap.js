@@ -79,7 +79,7 @@ class MinHeap {
         this.heap[1]=this.heap.pop();
         let i=1;
         while(true){
-            if(this.heap[this.idxOfLeftChild(i)]<this.heap[this.idxOfRightChild(i)]){
+            if(this.heap[this.idxOfLeftChild(i)]<this.heap[this.idxOfRightChild(i)]||this.heap[this.idxOfRightChild(i)]==undefined){
                 if(this.heap[i]>this.heap[this.idxOfLeftChild(i)]){
                     [this.heap[i],this.heap[this.idxOfLeftChild(i)]]=[this.heap[this.idxOfLeftChild(i)],this.heap[i]];
                     i=this.idxOfLeftChild(i);
@@ -156,3 +156,15 @@ const min4 = testMinHeap.extract();
 testMinHeap.printHorizontalTree();
 console.log("----------------------------------")
 console.log(min4)
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+console.log(testMinHeap.extract());
+testMinHeap.printHorizontalTree();
