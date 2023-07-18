@@ -17,14 +17,14 @@ class MinHeap {
         this.heap = [null];
     }
 
-    idxOfParent(i){
-        return Math.floor(i/2);
+    idxOfParent(i) {
+        return Math.floor(i / 2);
     }
-    idxOfLeftChild(i){
-        return i*2;
+    idxOfLeftChild(i) {
+        return i * 2;
     }
-    idxOfRightChild(i){
-        return i*2 + 1;
+    idxOfRightChild(i) {
+        return i * 2 + 1;
     }
 
 
@@ -51,13 +51,49 @@ class MinHeap {
      */
     insert(num) {
         this.heap.push(num);
-        let i = this.heap.length-1;
-        while(true){
-            if(this.heap[i] < this.heap[this.idxOfParent(i)]){
-                [this.heap[i],this.heap[this.idxOfParent(i)]]= [this.heap[this.idxOfParent(i)],this.heap[i]];
+        let i = this.heap.length - 1;
+        while (true) {
+            if (this.heap[i] < this.heap[this.idxOfParent(i)]) {
+                [this.heap[i], this.heap[this.idxOfParent(i)]] = [this.heap[this.idxOfParent(i)], this.heap[i]];
                 i = this.idxOfParent(i);
-            }else{return this}
+            } else { return this }
         }
+    }
+
+    /**
+   * Extracts the min num from the heap and then re-orders the heap to
+   * maintain order so the next min is ready to be extracted.
+   * 1. Save the first node to a temp var.
+   * 2. Pop last node off and set idx1 equal to the popped value.
+   * 3. Iteratively swap the old last node that is now at idx1 with it's
+   *    smallest child IF the smallest child is smaller than it.
+   * - Time: O(log n) logarithmic due to shiftDown.
+   * - Space: O(1) constant.
+   * @returns {?number} The min number or null if empty.
+   */
+    extract() {
+        if(this.top()==null){
+            return null;
+        }const min = this.top();
+        this.heap[1]=this.heap.pop();
+        let i=1;
+        while(true){
+            if(this.heap[this.idxOfLeftChild(i)]<this.heap[this.idxOfRightChild(i)]){
+                if(this.heap[i]>this.heap[this.idxOfLeftChild(i)]){
+                    [this.heap[i],this.heap[this.idxOfLeftChild(i)]]=[this.heap[this.idxOfLeftChild(i)],this.heap[i]];
+                    i=this.idxOfLeftChild(i);
+                }else{
+                    break;
+                }
+            }else{
+                if(this.heap[i]>this.heap[this.idxOfRightChild(i)]){
+                    [this.heap[i],this.heap[this.idxOfRightChild(i)]]=[this.heap[this.idxOfRightChild(i)],this.heap[i]];
+                    i=this.idxOfRightChild(i);
+                }else{
+                    break;
+                }
+            }
+        }return min;
     }
 
     /**
@@ -82,42 +118,40 @@ class MinHeap {
 }
 
 let testHeap = new MinHeap;
-let insertHeap = new MinHeap;
-testHeap.heap=[null,1,9,2,13,10,5,3,15,14,11,21,7,6,4,17,16,24,28,23,12,22,27,30,8,20,26,19,31,18,25,29];
-console.log(testHeap.top());
-testHeap.insert(10);
-testHeap.printHorizontalTree();
+testHeap.heap = [null, 1, 9, 2, 13, 10, 5, 3, 15, 14, 11, 21, 7, 6, 4, 17, 16, 24, 28, 23, 12, 22, 27, 30, 8, 20, 26, 19, 31, 18, 25, 29];
 
-insertHeap.insert(31)
-.insert(30)
-.insert(29)
-.insert(28)
-.insert(27)
-.insert(26)
-.insert(25)
-.insert(24)
-.insert(23)
-.insert(22)
-.insert(21)
-.insert(20)
-.insert(19)
-.insert(18)
-.insert(17)
-.insert(16)
-.insert(15)
-.insert(14)
-.insert(13)
-.insert(12)
-.insert(11)
-.insert(10)
-.insert(9)
-.insert(8)
-.insert(7)
-.insert(6)
-.insert(5)
-.insert(4)
-.insert(3)
-.insert(2)
-.insert(1);
-console.log("");
-insertHeap.printHorizontalTree();
+const testMinHeap = new MinHeap();
+testMinHeap.insert(5);
+testMinHeap.insert(4);
+testMinHeap.insert(7);
+testMinHeap.insert(3);
+testMinHeap.insert(6);
+testMinHeap.insert(10);
+testMinHeap.insert(40);
+testMinHeap.insert(15);
+testMinHeap.insert(20);
+testMinHeap.insert(35);
+testMinHeap.insert(11);
+testMinHeap.insert(42);
+testMinHeap.insert(9);
+testMinHeap.insert(25);
+testMinHeap.insert(30);
+testMinHeap.printHorizontalTree()
+console.log("----------------------------------")
+console.log(testMinHeap.top())
+const min = testMinHeap.extract();
+testMinHeap.printHorizontalTree();
+console.log("----------------------------------")
+console.log(min)
+const min2 = testMinHeap.extract();
+testMinHeap.printHorizontalTree();
+console.log("----------------------------------")
+console.log(min2)
+const min3 = testMinHeap.extract();
+testMinHeap.printHorizontalTree();
+console.log("----------------------------------")
+console.log(min3)
+const min4 = testMinHeap.extract();
+testMinHeap.printHorizontalTree();
+console.log("----------------------------------")
+console.log(min4)
