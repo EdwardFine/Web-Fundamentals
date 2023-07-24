@@ -47,19 +47,23 @@ class DoublyLinkedList {
      * @returns {DoublyLinkedList} This list.
      */
     insertAtFront(data) {
-        const node = new DLLNode(data);
-        if (this.head == null) {
-            this.head = node;
-        } else if (this.tail == null) {
-            this.head.prev = node;
-            node.next = this.head;
-            this.tail = this.head;
-            this.head = node;
+        // Create a new node with the given data.
+        const newHead = new DLLNode(data);
+        // Check if the list is empty.
+        if (this.isEmpty()) {
+            // If the list is empty, set both the head and tail to the new node.
+            this.head = newHead;
+            this.tail = newHead;
         } else {
-            node.next = this.head;
-            this.head.prev = node;
-            this.head = node;
+            // If the list is not empty:
+            // - Set the old head as the next node of the new node.
+            const oldHead = this.head;
+            oldHead.prev = newHead;
+            newHead.next = oldHead;
+            // - Update the head to be the new node.
+            this.head = newHead;
         }
+        // Return the updated list.
         return this;
     }
 
@@ -71,18 +75,21 @@ class DoublyLinkedList {
      * @returns {DoublyLinkedList} This list.
      */
     insertAtBack(data) {
-        const node = new DLLNode(data);
-        if (this.head == null) {
-            this.head = node;
-        } else if (this.tail == null) {
-            node.prev = this.head;
-            this.head.next = node;
-            this.tail = node;
+        const newTail = new DLLNode(data);
+        if (this.isEmpty()) {
+            // If the list is empty, set both the head and tail to the new node.
+            this.head = newTail;
+            this.tail = newTail;
         } else {
-            this.tail.next = node;
-            node.prev = this.tail;
-            this.tail = node;
+            // If the list is not empty:
+            // - Set the next reference of the current tail to the new node.
+            this.tail.next = newTail;
+            // - Set the prev reference of the new node to the current tail.
+            newTail.prev = this.tail;
+            // - Update the tail to be the new node.
+            this.tail = newTail;
         }
+        // Return the updated list.
         return this;
     }
 
@@ -94,22 +101,46 @@ class DoublyLinkedList {
      * @returns {any} The data of the removed node.
      */
     removeMiddleNode() {
-        if (this.isEmpty()) {
-            return null;
-        }else if(this.tail == null){
-            const data = this.head.data;
+        // Check if there is only one node in the list.
+        if (!this.isEmpty() && this.head === this.tail) {
+            // If there is only one node, remove it by setting the head and tail to null.
+            const removedData = this.head.data;
             this.head = null;
-            return data;
+            this.tail = null;
+            return removedData;
         }
-        let fast = this.head;
-        let slow = this.head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+        // Create two runners, one starting from the head and the other from the tail.
+        let forwardRunner = this.head;
+        let backwardsRunner = this.tail;
+
+        // Traverse the list towards the middle from both ends.
+        while (forwardRunner && backwardsRunner) {
+            // Check if the forward and backward runners have met at the same node (middle node).
+            if (forwardRunner === backwardsRunner) {
+                // Save the middle node reference.
+                const midNode = forwardRunner;
+
+                // Adjust the previous node's next reference to skip the middle node.
+                midNode.prev.next = midNode.next;
+                // Adjust the next node's previous reference to skip the middle node.
+                midNode.next.prev = midNode.prev;
+
+                // Return the data of the removed middle node.
+                return midNode.data;
+            }
+            // Check if the forward runner's previous node is the same as the backward runner,
+            // indicating that the runners have passed each other without stopping on the same node.
+            // This occurs in even-length lists and indicates that there is no middle node.
+            if (forwardRunner.prev === backwardsRunner) {
+                return null;
+            }
+            // Move the forward runner one step forward.
+            forwardRunner = forwardRunner.next;
+            // Move the backward runner one step backward.
+            backwardsRunner = backwardsRunner.prev;
         }
-        slow.prev.next = slow.next;
-        slow.next.prev = slow.prev;
-        return slow.data;
+        // If no middle node is found, return null.
+        return null;
     }
 
     /**
@@ -138,6 +169,69 @@ class DoublyLinkedList {
         }
         return vals;
     }
+
+    /**
+* Inserts a new node with the given newVal after the node that has the
+* given targetVal as it's data.
+* - Time: O(?).
+* - Space: O(?).
+* @param {any} targetVal The node data to find.
+* @param {any} newVal Data for the new node.
+* @returns {boolean} Indicates if the new node was added.
+*/
+    insertAfter(targetVal, newVal) {
+        if (this.isEmpty()) {
+            return false;
+        }
+        let runner = this.head;
+        while (runner != null) {
+            if (runner.data == targetVal) {
+                let newNode = new DLLNode(newVal);
+                newNode.next = runner.next;
+                newNode.prev = runner;
+                runner.next = newNode;
+                if (newNode.next == null) {
+                    this.tail = newNode;
+                } else {
+                    newNode.next.prev = newNode;
+                }
+                return true;
+            }
+            runner = runner.next;
+        } return false;
+    }
+
+    /**
+     * Inserts a new node with the given newVal before the node that has the
+     * given targetVal as it's data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} targetVal The node data to find.
+     * @param {any} newVal Data for the new node.
+     * @returns {boolean} Indicates if the new node was added.
+     */
+    insertBefore(targetVal, newVal) {
+        if (this.isEmpty()) {
+            return false;
+        }
+        let runner = this.head;
+        while (runner != null) {
+            if (runner.data == targetVal) {
+                let newNode = new DLLNode(newVal);
+                newNode.next = runner;
+                newNode.prev = runner.prev;
+                runner.prev = newNode;
+                if (newNode.prev == null) {
+                    this.head = newNode;
+                } else {
+                    newNode.prev.next = newNode;
+                }
+                return true;
+            }
+            runner = runner.next;
+        } return false;
+    }
+
 
     /**
      * Adds all the given items to the back of this list.
@@ -175,4 +269,8 @@ triNodeList.removeMiddleNode();
 console.log(triNodeList.toArray());
 
 
+console.log(triNodeListFront.toArray());
+triNodeListFront.insertAfter(1, 10);
+console.log(triNodeListFront.toArray());
+triNodeListFront.insertBefore(3,4);
 console.log(triNodeListFront.toArray());
