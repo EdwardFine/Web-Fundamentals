@@ -195,3 +195,6 @@ console.log(stack.pop());
 console.log(stack.pop());
 console.log(stack.pop());
 console.log(stack.items);
+
+
+module.exports = { Stack, LinkedListStack };
